@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for the Giraffe demo */
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html {
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  color: rgb(var(--foreground));
+  background: rgb(var(--background));
+}
+
+@layer components {
+  /* Custom button styles */
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2 px-4 rounded-md transition-colors;
+  }
+  
+  /* Panel styles */
+  .panel {
+    @apply bg-white rounded-lg shadow-lg border border-gray-200;
+  }
+  
+  /* Giraffe viewer specific styles */
+  .giraffe-viewer {
+    @apply w-full h-full relative overflow-hidden;
+  }
+  
+  .giraffe-controls {
+    @apply absolute top-4 right-4 z-10 flex flex-col gap-2;
+  }
+  
+  .giraffe-panel {
+    @apply absolute left-4 top-4 bottom-4 w-80 bg-white rounded-lg shadow-lg flex flex-col z-10;
+  }
+}
